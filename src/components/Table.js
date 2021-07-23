@@ -10,7 +10,7 @@ function Table(props) {
           <th>Quantity</th>
           <th>Price per unit</th>
           <th>Total</th>
-          <th>Edit/Delete</th>
+          <th style={{padding:'3px'}}></th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +22,8 @@ function Table(props) {
                 className="itemName"
                 onDoubleClick={(e) => {
                   e.currentTarget.contentEditable = true;
+                  e.currentTarget.closest('tr').querySelector('.editBtn').style.display = 'inline-block';
+                  e.currentTarget.focus();
                 }}
                 title="Double click to make edits."
               >
@@ -31,6 +33,8 @@ function Table(props) {
                 className="units"
                 onDoubleClick={(e) => {
                   e.currentTarget.contentEditable = true;
+                  e.currentTarget.closest('tr').querySelector('.editBtn').style.display = 'inline-block';
+                  e.currentTarget.focus();
                 }}
                 title="Double click to make edits."
               >
@@ -40,6 +44,8 @@ function Table(props) {
                 className="price"
                 onDoubleClick={(e) => {
                   e.currentTarget.contentEditable = true;
+                  e.currentTarget.closest('tr').querySelector('.editBtn').style.display = 'inline-block';
+                  e.currentTarget.focus();
                 }}
                 title="Double click to make edits."
               >
@@ -48,8 +54,10 @@ function Table(props) {
               <td>{entry.units * entry.price}</td>
               <td>
                 <input
+                  className = "editBtn"
                   type="button"
-                  value="Edit"
+                  style={{display:'none'}}
+                  value="Save"
                   onClick={(e) => {
                     const row = e.currentTarget.closest("tr");
                     const itemNameTD = row.querySelector(".itemName");
@@ -70,9 +78,11 @@ function Table(props) {
                       units,
                       price,
                     });
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
                 <input
+                  className="deleteBtn"
                   type="button"
                   value="Delete"
                   onClick={(e) => {

@@ -41,3 +41,18 @@ table tfoot tr td{
 table tfoot tr td#gtotal{
   text-align: right;
 }
+input[type="button"]{
+  width: 40%;
+  font-size: 1rem;
+  border: 1px solid;
+  background-color: white;
+  padding: 3px;
+}
+input[type="button"].editBtn:hover{
+  background-color: green;
+  color: #fff;
+}
+input[type="button"].deleteBtn:hover{
+  background-color: red;
+  color: #fff;
+}
