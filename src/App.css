@@ -1,38 +1,43 @@
-.App {
+div.container{
+  width: 80%;
+  margin: auto;
+  padding: 3rem;
+  position: relative;
+}
+h1{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container form{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+.container form input{
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1.4rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container table{
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+.container table thead th{
+  border-bottom: 1px solid #000;
+}
+.container table thead th,.container table tbody td{
+  border-right: 1px solid #000;
+  text-align: center;
+  font-size: 1.4rem;
+}
+table tfoot tr{
+  border-top: 1px solid black;
+}
+table tfoot tr td{
+  text-align: center;
+  font-size: 1.4rem;
+}
+table tfoot tr td#gtotal{
+  text-align: right;
 }
