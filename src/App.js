@@ -71,6 +71,7 @@ class App extends React.Component {
       return (
         <>
           <Form onSubmit={this.addItem} />
+          <span>(Double click on fields to edit.)</span>
           <Table
             itemList={this.state.itemList}
             editEntry={this.editEntry}
